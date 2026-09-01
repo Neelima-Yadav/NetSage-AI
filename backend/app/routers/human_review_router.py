@@ -65,7 +65,9 @@ def submit_review(
             step_by_step_troubleshooting=updated.get("step_by_step_troubleshooting"),
             confidence=updated.get("confidence"),
             osi_layer=updated.get("osi_layer"),
-            severity=updated.get("severity")
+            severity=updated.get("severity"),
+            original_ai_diagnosis=updated.get("original_ai_diagnosis"),
+            human_review=updated.get("human_review"),
         )
     except ValueError as e:
         raise HTTPException(

@@ -63,3 +63,11 @@ class ReviewResponse(BaseModel):
     confidence: Optional[int] = Field(None, description="AI confidence score.")
     osi_layer: Optional[int] = Field(None, description="Affected OSI layer.")
     severity: Optional[str] = Field(None, description="Severity classification.")
+    original_ai_diagnosis: Optional[Dict[str, Any]] = Field(
+        None,
+        description="Immutable diagnosis findings captured before the first human review."
+    )
+    human_review: Optional[Dict[str, Any]] = Field(
+        None,
+        description="Latest structured human decision including reason and corrections."
+    )
